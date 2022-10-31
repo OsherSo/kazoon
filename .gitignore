@@ -1,5 +1,6 @@
 # ignore everything
 *
+build/
 
 # but don't ignore files ending with slash = directories
 !*/
