@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.1'
-DESCRIPTION = 'The functions of a kazoon'
-LONG_DESCRIPTION = 'A collection of functions that will make your life easier!'
+VERSION = "0.0.1"
+DESCRIPTION = "The functions of a kazoon"
+LONG_DESCRIPTION = "A collection of functions that will make your life easier!"
 
 setup(
     name="kazoon",
@@ -13,8 +13,8 @@ setup(
     long_description_content_type="text/markdown",
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
-    install_requires=[],
-    keywords=['python'],
+    install_requires=["Pillow"],
+    keywords=["python", "image processing", "pdf"],
     classifiers=[
         "Development Status :: 1 - Planning",
         "Intended Audience :: Developers",
