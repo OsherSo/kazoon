@@ -13,7 +13,7 @@ setup(
     long_description_content_type="text/markdown",
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
-    install_requires=["Pillow"],
+    install_requires=["Pillow", "PyPDF2"],
     keywords=["python", "image processing", "pdf"],
     classifiers=[
         "Development Status :: 1 - Planning",
