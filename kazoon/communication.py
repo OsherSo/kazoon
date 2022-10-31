@@ -1,4 +1,6 @@
 import smtplib
+import requests
+import hashlib
 
 
 def send_email_gmail(from_name, to_mail, subject, content, user, password):
@@ -16,5 +18,27 @@ def send_email_gmail(from_name, to_mail, subject, content, user, password):
         smtp.send_message(email)
 
 
-send_email_gmail("Osher", "solimani.osher@gmail.com", "Hello", "My name is osher", "solimani.osher@gmail.com",
-                 "sxzxqpqigpuwdwoq")
+def password_checker(password):
+    """
+        Checks if password is safe or not
+
+        Arguments:
+            password: The password you want to check
+
+        Return:
+            0 for a safe password. Otherwise, the number of times the password has been hacked in the past.
+    """
+    sha1_password = hashlib.sha1(password.encode("utf-8")).hexdigest().upper()
+    first5_char, rest = sha1_password[:5], sha1_password[5:]
+
+    url = "https://api.pwnedpasswords.com/range/" + first5_char
+    res = requests.get(url)
+    if res.status_code != 200:
+        raise RuntimeError(f'Error fetching: {res.status_code}')
+
+    res = (line.split(':') for line in res.text.splitlines())
+    for h, count in res:
+        if h == rest:
+            return count
+
+    return 0
