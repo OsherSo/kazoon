@@ -3,3 +3,4 @@ build/
 .idea/
 kazoon.egg-info/
 dist/
+setup.py
