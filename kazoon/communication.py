@@ -4,6 +4,18 @@ import hashlib
 
 
 def send_email_gmail(from_name, to_mail, subject, content, user, password):
+    """
+        Sending an email through gmail.
+
+        Arguments:
+            from_name: The name of the message sender.
+            to_mail: The email to which the message will be sent.
+            subject: The subject of the message.
+            content: The content of the message.
+
+        Return:
+            0 for a safe password. Otherwise, the number of times the password has been hacked in the past.
+    """
     from email.message import EmailMessage
     email = EmailMessage()
     email["from"] = from_name
@@ -20,10 +32,10 @@ def send_email_gmail(from_name, to_mail, subject, content, user, password):
 
 def password_checker(password):
     """
-        Checks if password is safe or not
+        Checks if password is safe or not.
 
         Arguments:
-            password: The password you want to check
+            password: The password you want to check.
 
         Return:
             0 for a safe password. Otherwise, the number of times the password has been hacked in the past.
