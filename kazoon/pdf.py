@@ -1,5 +1,4 @@
 import os
-from PyPDF2 import PdfMerger
 
 
 def pdf_merger(pdf_files_path, output_name):
@@ -13,6 +12,7 @@ def pdf_merger(pdf_files_path, output_name):
     Return:
         None
     """
+    from PyPDF2 import PdfMerger
     merger = PdfMerger()
     pdf_files = os.listdir(pdf_files_path)
     for pdf_file in pdf_files:

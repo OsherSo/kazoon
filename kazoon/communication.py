@@ -1,8 +1,8 @@
 import smtplib
-from email.message import EmailMessage
 
 
 def send_email_gmail(from_name, to_mail, subject, content, user, password):
+    from email.message import EmailMessage
     email = EmailMessage()
     email["from"] = from_name
     email["to"] = to_mail

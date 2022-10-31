@@ -1,5 +1,4 @@
 import os
-from PIL import Image
 
 
 def jpg_to_png_converter(src_dir, dest_dir, image_size=None):
@@ -14,6 +13,7 @@ def jpg_to_png_converter(src_dir, dest_dir, image_size=None):
     Return:
         None
     """
+    from PIL import Image
     if not os.path.isdir(dest_dir):
         os.makedirs(dest_dir)
 
