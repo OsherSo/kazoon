@@ -1,10 +1,5 @@
 # ignore everything
-*
 build/
-
-# but don't ignore files ending with slash = directories
-!*/
-
-# and don't ignore files ending with
-!.gitignore
-!*.py
+.idea/
+kazoon.egg-info/
+dist/
